@@ -1,58 +1,16 @@
+# Project Overview
+Aimed to build a serverless pipeline using AWS CDK to analyze the finance data from 3 different sources. The historical stock data is stored in an Amazon RDS database, the historical FOREX data(Foreign Exchange Market) is stored in an AWS S3 bucket in JSON format, and the intraday stock data comes from the Alpha Vantage API. Used AWS serverless technologies like Amazon Lambda and Amazon Glue to process and transform the data from the three data sources. We also use Amazon Athena and Quicksight to analyze and visualize the transformed data.
 
-# Welcome to your CDK Python project!
+## Alpha Vantage
+From the Alpha Vantage website: "Alpha Vantage provides enterprise-grade financial market data through a set of powerful and developer-friendly data APIs and spreadsheets. From traditional asset classes (e.g., stocks, ETFs, mutual funds) to economic indicators, from foreign exchange rates to commodities, from fundamental data to technical indicators, Alpha Vantage is your one-stop-shop for real-time and historical global market data delivered through cloud-based APIs, Excel, and Google Sheets."
 
-This is a blank project for CDK development with Python.
+## AWS CDK
+The AWS Cloud Development Kit (AWS CDK) is an open-source software development platform for defining cloud architecture in code and provisioning it using AWS CloudFormation. It provides a high-level object-oriented framework for defining AWS resources with the capability of current programming languages. You can quickly include AWS best practices in your infrastructure definition and publish it without worrying about boilerplate logic using CDK's library of infrastructure components
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+## Tech Stack
+Language: Python
 
-This project is set up like a standard Python project.  The initialization
-process also creates a virtualenv within this project, stored under the `.venv`
-directory.  To create the virtualenv it assumes that there is a `python3`
-(or `python` for Windows) executable in your path with access to the `venv`
-package. If for any reason the automatic creation of the virtualenv fails,
-you can create the virtualenv manually.
+Services: AWS CDK, AWS S3, AWS Lambda, Amazon RDS, AWS Glue, Amazon Athena, Quicksight
 
-To manually create a virtualenv on MacOS and Linux:
 
-```
-$ python3 -m venv .venv
-```
-
-After the init process completes and the virtualenv is created, you can use the following
-step to activate your virtualenv.
-
-```
-$ source .venv/bin/activate
-```
-
-If you are a Windows platform, you would activate the virtualenv like this:
-
-```
-% .venv\Scripts\activate.bat
-```
-
-Once the virtualenv is activated, you can install the required dependencies.
-
-```
-$ pip install -r requirements.txt
-```
-
-At this point you can now synthesize the CloudFormation template for this code.
-
-```
-$ cdk synth
-```
-
-To add additional dependencies, for example other CDK libraries, just add
-them to your `setup.py` file and rerun the `pip install -r requirements.txt`
-command.
-
-## Useful commands
-
- * `cdk ls`          list all stacks in the app
- * `cdk synth`       emits the synthesized CloudFormation template
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk docs`        open CDK documentation
-
-Enjoy!
+***Note: The .env file provided lists environment variables that need to be inputted before deploying***
