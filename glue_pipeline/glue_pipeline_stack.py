@@ -29,7 +29,7 @@ RDS_SECURITY_GROUP_IDS = [
 ]
 
 TAGS = [
-    CfnTag(key="ProjectOwner",value="Alex-Clark"),
+    CfnTag(key="ProjectOwner",value="Samarjit-Kalra"),
     CfnTag(key="ProjectName",value="Big-Data-Pipeline")
 ]
 
@@ -38,7 +38,7 @@ class GluePipelineStack(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
-        # Glue permissions can be difficult to configure, it"s easiest to grand admin access
+        # Glue permissions can be difficult to configure, it's easiest to grant admin access
         glue_role = iam.Role(self, "GlueExecutorRole", assumed_by=iam.ServicePrincipal("glue.amazonaws.com"))
         glue_role.add_managed_policy(iam.ManagedPolicy.from_aws_managed_policy_name("AdministratorAccess"))
 
